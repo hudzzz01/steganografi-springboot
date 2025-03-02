@@ -50,6 +50,11 @@ public class SteganografiServiceImpl implements SteganografiService {
         if (result[0] == "0") throw new RuntimeException("Kesalahan membuat image steganografi");
 
         //todo : create stegaimage
+        File outputDir = new File("OutputImage");
+        if (!outputDir.exists()) {
+            outputDir.mkdirs();
+        }
+
         File stegaImage = new File(Path.of("OutputImage/" + result[2]).toUri());
 
 //        System.out.println(stegaImage.exists());
